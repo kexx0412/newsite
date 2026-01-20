@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Плюшевий Стіч - М'яка іграшка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="logo">toys world</h1>
+                    <p class="tagline">М'який друг для затишку та радості</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-wrapper">
+                        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Пошук товарів...">
+                    </div>
+                    <button class="cart-btn" id="cartBtn">
+                        🛒 <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="layout">
+                <!-- Sidebar Catalog -->
+                <aside class="sidebar">
+                    <h3 class="sidebar-title">Каталог</h3>
+                    <nav class="catalog-menu">
+                        <ul class="catalog-list">
+                            <li class="catalog-item active">
+                                <a href="#" class="catalog-link" data-category="plush">
+                                    <span class="catalog-icon">🧸</span>
+                                    Плюшеві іграшки
+                                </a>
+                            </li>
+                            <li class="catalog-item">
+                                <a href="#" class="catalog-link" data-category="board">
+                                    <span class="catalog-icon">🎲</span>
+                                    Настільні іграшки
+                                </a>
+                            </li>
+                            <li class="catalog-item">
+                                <a href="#" class="catalog-link" data-category="cosmetics">
+                                    <span class="catalog-icon">✨</span>
+                                    Дитяча косметика
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!-- Product Content -->
+                <div class="content">
+                    <!-- Products Section -->
+                    <section class="product-section">
+                        <!-- Stitch Product -->
+                        <div class="product-card" id="productCard1" data-category="plush">
+                            <div class="product-image-wrapper">
+                                <img src="stitch-photo1.jpg" alt="Плюшевий Стіч" class="product-img">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Іграшка-нічник Плюшевий Стіч Miniverse серія "Mini Stitch"</h3>
+                                <p class="product-code">Код: 591825</p>
+                                <p class="product-price">749 ₴</p>
+                                <p class="product-stock">В наявності</p>
+                                <button class="btn-buy" data-product="1">Купити</button>
+                            </div>
+                        </div>
+
+                        <!-- Board Game Product -->
+                        <div class="product-card" id="productCard2" data-category="board" style="display: none;">
+                            <div class="product-image-wrapper">
+                                <img src="hedgehog-game1.jpg" alt="Настільна гра 🦔" class="product-img">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Настільна гра 🦔</h3>
+                                <p class="product-code">Код: 892456</p>
+                                <p class="product-price">450 ₴</p>
+                                <p class="product-stock">В наявності</p>
+                                <button class="btn-buy" data-product="2">Купити</button>
+                            </div>
+                        </div>
+
+                        <!-- Woodpecker Game Product -->
+                        <div class="product-card" id="productCard4" data-category="board" style="display: none;">
+                            <div class="product-image-wrapper">
+                                <img src="woodpecker-game1.jpg" alt="Магнітна гра Нагодуй дятлика" class="product-img">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Магнітна гра "Нагодуй дятлика"</h3>
+                                <p class="product-code">Код: 725930</p>
+                                <p class="product-price">410 ₴</p>
+                                <p class="product-stock">В наявності</p>
+                                <button class="btn-buy" data-product="4">Купити</button>
+                            </div>
+                        </div>
+
+                        <!-- Cosmetics Product -->
+                        <div class="product-card" id="productCard3" data-category="cosmetics" style="display: none;">
+                            <div class="product-image-wrapper">
+                                <img src="unicorn-cosmetics.jpg" alt="Набір косметики Unicorn" class="product-img">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Дитячий набір косметики з косметичкою "Unicorn"</h3>
+                                <p class="product-code">Код: 738291</p>
+                                <p class="product-price">599 ₴</p>
+                                <p class="product-stock">В наявності</p>
+                                <button class="btn-buy" data-product="3">Купити</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Product Detail Modal (Unicorn Cosmetics) -->
+    <div class="modal" id="productModal3">
+        <div class="modal-content product-modal-content">
+            <button class="modal-close" id="closeProductModal3">&times;</button>
+            <div class="product-detail">
+                <div class="product-detail-image">
+                    <div class="gallery-container">
+                        <button class="gallery-btn gallery-prev" id="galleryPrevUnicorn">&larr;</button>
+                        <div class="gallery-wrapper">
+                            <img src="unicorn-cosmetics.jpg" alt="Набір косметики Unicorn" class="detail-img gallery-img active" data-index="0">
+                            <video class="detail-img gallery-img" data-index="1" controls>
+                                <source src="unicorn-cosmetics.mp4" type="video/mp4">
+                                Ваш браузер не підтримує відео.
+                            </video>
+                        </div>
+                        <button class="gallery-btn gallery-next" id="galleryNextUnicorn">&rarr;</button>
+                    </div>
+                    <div class="gallery-dots" id="galleryDotsUnicorn"></div>
+                </div>
+                <div class="product-detail-info">
+                    <h2 class="detail-title">Дитячий набір косметики з косметичкою "Unicorn" 🦄</h2>
+                    <p class="detail-code">Код: 738291</p>
+                    <p class="detail-price">599 грн</p>
+                    <div class="detail-description">
+                        ✨ Чарівний набір косметики для юних принцес!<br><br>
+                        <strong>🎁 У наборі:</strong><br>
+                        💄 Блиски для губ<br>
+                        💅 Лаки для нігтів<br>
+                        💋 Помади<br>
+                        🌈 Тіні для очей<br>
+                        💜 Косметичка з дизайном єдинорога<br><br>
+                        <strong>✨ Особливості:</strong><br>
+                        ✅ Безпечна дитяча косметика<br>
+                        ✅ Легко змивається водою<br>
+                        ✅ Яскраві кольори<br>
+                        ✅ Розвиває творчість<br>
+                        ✅ Ідеальний подарунок<br><br>
+                        🎂 Рекомендований вік: 3+
+                    </div>
+                    <button class="btn-buy-detail" data-product="3">Купити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal (Woodpecker Game) -->
+    <div class="modal" id="productModal4">
+        <div class="modal-content product-modal-content">
+            <button class="modal-close" id="closeProductModal4">&times;</button>
+            <div class="product-detail">
+                <div class="product-detail-image">
+                    <div class="gallery-container">
+                        <button class="gallery-btn gallery-prev" id="galleryPrevWoodpecker">&larr;</button>
+                        <div class="gallery-wrapper">
+                            <img src="woodpecker-game1.jpg" alt="Магнітна гра Нагодуй дятлика" class="detail-img gallery-img active" data-index="0">
+                            <img src="woodpecker-game2.jpg" alt="Магнітна гра Нагодуй дятлика" class="detail-img gallery-img" data-index="1">
+                            <img src="woodpecker-game3.jpg" alt="Магнітна гра Нагодуй дятлика" class="detail-img gallery-img" data-index="2">
+                            <video class="detail-img gallery-img" data-index="3" controls>
+                                <source src="woodpecker-game.mp4" type="video/mp4">
+                                Ваш браузер не підтримує відео.
+                            </video>
+                        </div>
+                        <button class="gallery-btn gallery-next" id="galleryNextWoodpecker">&rarr;</button>
+                    </div>
+                    <div class="gallery-dots" id="galleryDotsWoodpecker"></div>
+                </div>
+                <div class="product-detail-info">
+                    <h2 class="detail-title">Магнітна гра "Нагодуй дятлика" 🐦</h2>
+                    <p class="detail-code">Код: 725930</p>
+                    <p class="detail-price">410 грн</p>
+                    <div class="detail-description">
+                        Грайся та розвивайся разом із веселими пташками!<br>
+                        Цікава розвивальна іграшка, яка захоплює дітей з перших хвилин 💛<br><br>
+                        Малюк ловить яскравих черв'ячків магнітним дзьобиком та годує дятлика — весело й корисно!<br><br>
+                        <strong>🌈 Що розвиває:</strong><br>
+                        ✔️ дрібну моторику<br>
+                        ✔️ координацію рук і очей<br>
+                        ✔️ логіку та уважність<br>
+                        ✔️ вивчення кольорів<br><br>
+                        <strong>🐛 У наборі:</strong><br>
+                        • пеньок з отворами<br>
+                        • пташки з магнітним дзьобиком<br>
+                        • 10 кольорових черв'ячків<br><br>
+                        ✨ Яскравий дизайн<br>
+                        ✨ Безпечні матеріали<br><br>
+                        <strong>Артикул: 2593</strong>
+                    </div>
+                    <button class="btn-buy-detail" data-product="4">Купити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal (Hedgehog Game) -->
+    <div class="modal" id="productModal2">
+        <div class="modal-content product-modal-content">
+            <button class="modal-close" id="closeProductModal2">&times;</button>
+            <div class="product-detail">
+                <div class="product-detail-image">
+                    <div class="gallery-container">
+                        <button class="gallery-btn gallery-prev" id="galleryPrev">&larr;</button>
+                        <div class="gallery-wrapper">
+                            <img src="hedgehog-game1.jpg" alt="Настільна гра 🦔" class="detail-img gallery-img active" data-index="0">
+                            <img src="hedgehog-game2.jpg" alt="Настільна гра 🦔" class="detail-img gallery-img" data-index="1">
+                            <img src="hedgehog-game3.jpg" alt="Настільна гра 🦔" class="detail-img gallery-img" data-index="2">
+                            <img src="hedgehog-game4.jpg" alt="Настільна гра 🦔" class="detail-img gallery-img" data-index="3">
+                            <video class="detail-img gallery-img" data-index="4" controls>
+                                <source src="hedgehog-game.mp4" type="video/mp4">
+                                Ваш браузер не підтримує відео.
+                            </video>
+                        </div>
+                        <button class="gallery-btn gallery-next" id="galleryNext">&rarr;</button>
+                    </div>
+                    <div class="gallery-dots" id="galleryDots"></div>
+                </div>
+                <div class="product-detail-info">
+                    <h2 class="detail-title">Настільна гра 🦔</h2>
+                    <p class="detail-code">Код: 892456</p>
+                    <p class="detail-price">450 грн</p>
+                    <div class="detail-description">
+                        О ні! Їжачок загубив свої голочки!<br>
+                        Допоможіть йому у веселій грі для діток<br><br>
+                        🎲 Кидайте кубики та додавайте стільки колючок, скільки випало — хто першим збере повну спинку, той переміг! 🎉<br><br>
+                        <strong>✨ Що розвиває гра:</strong><br>
+                        🤲 дрібну моторику<br>
+                        🧠 логічне мислення<br>
+                        👀 уважність<br><br>
+                        👨‍👩‍👧‍👦 Для 2–4 гравців | 🌈 Яскравий дизайн | 🌳 Дерев'яні елементи<br><br>
+                        <strong>Артикул: 2644</strong>
+                    </div>
+                    <button class="btn-buy-detail" data-product="2">Купити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content product-modal-content">
+            <button class="modal-close" id="closeProductModal">&times;</button>
+            <div class="product-detail">
+                <div class="product-detail-image">
+                    <div class="gallery-container">
+                        <button class="gallery-btn gallery-prev" id="galleryPrevStitch">&larr;</button>
+                        <div class="gallery-wrapper">
+                            <img src="stitch-photo1.jpg" alt="Плюшевий Стіч" class="detail-img gallery-img active" data-index="0">
+                            <img src="stitch-photo2.jpg" alt="Плюшевий Стіч" class="detail-img gallery-img" data-index="1">
+                            <img src="stitch-photo3.jpg" alt="Плюшевий Стіч" class="detail-img gallery-img" data-index="2">
+                        </div>
+                        <button class="gallery-btn gallery-next" id="galleryNextStitch">&rarr;</button>
+                    </div>
+                    <div class="gallery-dots" id="galleryDotsStitch"></div>
+                </div>
+                <div class="product-detail-info">
+                    <h2 class="detail-title">Іграшка-нічник Плюшевий Стіч</h2>
+                    <p class="detail-code">Код: 591825</p>
+                    <p class="detail-price">749 грн 💤</p>
+                    <div class="detail-description">
+                        🤍 Животик світиться<br>
+                        🤍 Матеріал: Плюш<br>
+                        🤍 Наповнювач: бавовна<br>
+                        🤍 Працює від батарейок (3 шт. x ААА)<br>
+                        🤍 28 см<br>
+                        🤍 Кольори: Стіч (синій, рожевий)<br><br>
+                        <strong>749 грн 💤</strong><br><br>
+                        Іграшка-нічник, імітує рухи та звук дихання, на фоні грає заспокійлива мелодія.<br><br>
+                        Приємна на дотик, працює від трьох батарейок ✨<br><br>
+                        Ця дивовижна іграшка не лише музична і розвиваюча, а й здатна створити атмосферу релаксації перед сном завдяки своїй інтерактивності. З м'якою та приємною на дотик текстурою, вона принесе затишок і комфорт✨
+                    </div>
+                    <button class="btn-buy-detail" id="buyFromDetail">Купити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" id="closeCartModal">&times;</button>
+            <h2 class="modal-title">Ваша корзина 🛒</h2>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Корзина порожня</p>
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display: none;">
+                <div class="cart-total">
+                    <span>Всього:</span>
+                    <span class="total-price" id="totalPrice">0 ₴</span>
+                </div>
+                <button class="btn-checkout" id="checkoutBtn">Оформити замовлення</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Form -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2 class="modal-title">Оформлення замовлення</h2>
+            <p class="modal-subtitle">Заповніть форму, і ми зв'яжемось з вами найближчим часом</p>
+            
+            <div class="order-summary" id="orderSummary"></div>
+            
+            <form class="order-form" id="orderForm">
+                <div class="form-group">
+                    <label for="customerName">Ім'я *</label>
+                    <input 
+                        type="text" 
+                        id="customerName" 
+                        name="customerName" 
+                        placeholder="Ваше ім'я" 
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerPhone">Телефон *</label>
+                    <input 
+                        type="tel" 
+                        id="customerPhone" 
+                        name="customerPhone" 
+                        placeholder="+380 XX XXX XX XX" 
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerAddress">Адреса *</label>
+                    <textarea 
+                        id="customerAddress" 
+                        name="customerAddress" 
+                        placeholder="Місто, відділення Нової Пошти або адреса" 
+                        rows="3"
+                        required
+                    ></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">Підтвердити замовлення</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <div class="success-content">
+            <span class="success-icon">✅</span>
+            <h3>Дякуємо за замовлення!</h3>
+            <p>Ми зв'яжемось з вами найближчим часом для підтвердження</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Плюшевий Стіч. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
